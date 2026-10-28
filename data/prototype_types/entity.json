@@ -1,0 +1,20 @@
+{
+  "type": "entity",
+  "label": "Entity — предмет / сущность",
+  "description": "Любой объект в игре: предмет, оружие, стена, моб, механизм. К нему можно добавлять компоненты.",
+  "supports_components": true,
+  "fields": [
+    {"key": "parent", "label": "Родитель (parent)", "type": "string", "placeholder": "BaseItem",
+     "help": "ID прототипа, от которого наследуемся (например BaseItem)."},
+    {"key": "id", "label": "ID", "type": "string", "required": true, "placeholder": "MyCoolWrench",
+     "help": "Уникальный идентификатор прототипа (латиница, PascalCase)."},
+    {"key": "name", "label": "Название", "type": "string", "placeholder": "крутой гаечный ключ",
+     "help": "Имя в игре. По традиции SS14 пишется с маленькой буквы."},
+    {"key": "suffix", "label": "Суффикс", "type": "string",
+     "help": "Видно только в редакторе карт (например, «Filled» или «Empty»)."},
+    {"key": "description", "label": "Описание", "type": "text",
+     "help": "Текст при осмотре предмета."},
+    {"key": "abstract", "label": "Абстрактный", "type": "bool",
+     "help": "true — прототип только для наследования, заспавнить его нельзя."}
+  ]
+}

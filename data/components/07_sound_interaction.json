@@ -1,0 +1,25 @@
+{
+  "category": "Звук",
+  "components": [
+    {
+      "name": "AmbientSound",
+      "description": "Постоянный фоновый звук от объекта.",
+      "fields": [
+        {"key": "enabled", "label": "Включён", "type": "bool"},
+        {"key": "range", "label": "Радиус слышимости", "type": "float"},
+        {"key": "volume", "label": "Громкость (дБ)", "type": "float"},
+        {"key": "sound", "label": "Звук", "type": "group", "fields": [
+          {"key": "path", "label": "Путь к файлу", "type": "string", "placeholder": "/Audio/Ambience/Objects/hdd_buzz.ogg"}
+        ]}
+      ]
+    },
+    {
+      "name": "UseDelay",
+      "description": "Пауза между использованиями предмета.",
+      "category": "Взаимодействие",
+      "fields": [
+        {"key": "delay", "label": "Задержка, сек", "type": "float"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "category": "Предметы и одежда",
+  "components": [
+    {
+      "name": "Item",
+      "description": "Предмет можно взять в руки и положить в сумку.",
+      "fields": [
+        {"key": "size", "label": "Размер", "type": "enum", "editable": true,
+         "options": ["Tiny", "Small", "Normal", "Large", "Huge", "Ginormous"]},
+        {"key": "heldPrefix", "label": "Префикс для рук (heldPrefix)", "type": "string",
+         "help": "Префикс состояний inhand-спрайтов."},
+        {"key": "sprite", "label": "RSI для рук", "type": "string", "placeholder": "Objects/Tools/wrench.rsi"}
+      ]
+    },
+    {
+      "name": "Clothing",
+      "description": "Одежда и снаряжение, надеваемое в слот.",
+      "fields": [
+        {"key": "sprite", "label": "RSI одежды", "type": "string", "placeholder": "Clothing/Head/Hats/example.rsi"},
+        {"key": "equippedPrefix", "label": "Префикс состояния", "type": "string"},
+        {"key": "slots", "label": "Слоты", "type": "list", "item_type": "string",
+         "help": "Например: head, mask, eyes, ears, neck, innerclothing, outerclothing, belt, back, gloves, shoes, id, pocket, suitstorage."},
+        {"key": "quickEquip", "label": "Быстрая экипировка", "type": "bool"}
+      ]
+    },
+    {
+      "name": "Stack",
+      "description": "Предмет складывается в стопку (листы, кабель, купюры).",
+      "fields": [
+        {"key": "stackType", "label": "Тип стека (ID прототипа stack)", "type": "string", "required": true},
+        {"key": "count", "label": "Количество", "type": "int"}
+      ]
+    },
+    {
+      "name": "Tool",
+      "description": "Предмет работает как инструмент с определёнными качествами.",
+      "fields": [
+        {"key": "qualities", "label": "Качества", "type": "list", "item_type": "string",
+         "help": "Например: Anchoring, Prying, Screwing, Cutting, Welding, Pulsing."},
+        {"key": "speedModifier", "label": "Множитель скорости", "type": "float"}
+      ]
+    },
+    {
+      "name": "Tag",
+      "description": "Набор тегов (ID прототипов Tag).",
+      "fields": [
+        {"key": "tags", "label": "Теги", "type": "list", "item_type": "string", "required": true}
+      ]
+    }
+  ]
+}

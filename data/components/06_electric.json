@@ -1,0 +1,30 @@
+{
+  "category": "Электричество",
+  "components": [
+    {
+      "name": "Battery",
+      "description": "Накопитель энергии.",
+      "fields": [
+        {"key": "maxCharge", "label": "Максимальный заряд", "type": "float"},
+        {"key": "startingCharge", "label": "Начальный заряд", "type": "float"}
+      ]
+    },
+    {
+      "name": "ApcPowerReceiver",
+      "description": "Потребитель энергии из сети APC.",
+      "fields": [
+        {"key": "needsPower", "label": "Нужно питание", "type": "bool"},
+        {"key": "powerLoad", "label": "Потребление, Вт", "type": "float"},
+        {"key": "powerDisabled", "label": "Отключён", "type": "bool"}
+      ]
+    },
+    {
+      "name": "PowerSupplier",
+      "description": "Источник энергии для сети.",
+      "fields": [
+        {"key": "enabled", "label": "Включён", "type": "bool"},
+        {"key": "supplyRate", "label": "Выработка, Вт", "type": "float"}
+      ]
+    }
+  ]
+}

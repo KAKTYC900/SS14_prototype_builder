@@ -1,0 +1,25 @@
+{
+  "type": "gas",
+  "label": "Gas — газ",
+  "description": "Газ для атмосферной системы.",
+  "supports_components": false,
+  "fields": [
+    {"key": "id", "label": "ID", "type": "string", "required": true, "placeholder": "0",
+     "help": "Идентификатор газа. В ванильном SS14 это число-строка (0, 1, 2 ...) — сверьтесь с Resources/Prototypes/Atmospherics/gases.yml и не дублируйте существующие."},
+    {"key": "name", "label": "Название (ключ локализации)", "type": "string", "placeholder": "gases-oxygen",
+     "help": "Ключ из .ftl-файла локализации."},
+    {"key": "specificHeat", "label": "Удельная теплоёмкость", "type": "float", "placeholder": "20"},
+    {"key": "heatCapacityRatio", "label": "Показатель адиабаты", "type": "float", "placeholder": "1.4"},
+    {"key": "molarMass", "label": "Молярная масса", "type": "float", "placeholder": "32"},
+    {"key": "color", "label": "Цвет (hex без #)", "type": "string", "placeholder": "2887E8",
+     "help": "В gases.yml цвет записывается без решётки, например 2887E8."},
+    {"key": "reagent", "label": "Реагент", "type": "string", "placeholder": "Oxygen",
+     "help": "ID реагента, в который превращается газ (если нужно)."},
+    {"key": "pricePerMole", "label": "Цена за моль", "type": "float"},
+    {"key": "gasOverlaySprite", "label": "Оверлей: sprite", "type": "string",
+     "placeholder": "/Textures/Effects/atmospherics.rsi"},
+    {"key": "gasOverlayState", "label": "Оверлей: state", "type": "string"},
+    {"key": "gasMolesVisible", "label": "Молей для появления оверлея", "type": "float"},
+    {"key": "gasMolesVisibleMax", "label": "Молей для полного оверлея", "type": "float"}
+  ]
+}

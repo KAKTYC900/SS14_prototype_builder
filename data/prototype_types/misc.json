@@ -1,0 +1,82 @@
+[
+  {
+    "type": "reagent",
+    "label": "Reagent — реагент",
+    "description": "Химическое вещество. Сложные поля (metabolisms, reactiveEffects) добавьте вручную в готовый файл.",
+    "fields": [
+      {"key": "id", "label": "ID", "type": "string", "required": true, "placeholder": "Bicaridine"},
+      {"key": "name", "label": "Название (ключ локализации)", "type": "string", "placeholder": "reagent-name-bicaridine"},
+      {"key": "group", "label": "Группа", "type": "enum", "editable": true,
+       "options": ["Elements", "Medicine", "Toxins", "Narcotics", "Foods", "Drinks", "Chemicals", "Biological", "Special"]},
+      {"key": "desc", "label": "Описание (ключ локализации)", "type": "string"},
+      {"key": "physicalDesc", "label": "Внешний вид (ключ локализации)", "type": "string"},
+      {"key": "flavor", "label": "Вкус", "type": "string", "placeholder": "bitter"},
+      {"key": "color", "label": "Цвет", "type": "color"},
+      {"key": "boilingPoint", "label": "Температура кипения, K", "type": "float"},
+      {"key": "meltingPoint", "label": "Температура плавления, K", "type": "float"},
+      {"key": "slippery", "label": "Скользкий", "type": "bool"}
+    ]
+  },
+  {
+    "type": "Tag",
+    "label": "Tag — тег",
+    "description": "Метка, по которой компоненты и whitelist фильтруют предметы.",
+    "fields": [
+      {"key": "id", "label": "ID", "type": "string", "required": true, "placeholder": "Wrench"}
+    ]
+  },
+  {
+    "type": "damageType",
+    "label": "DamageType — тип урона",
+    "fields": [
+      {"key": "id", "label": "ID", "type": "string", "required": true, "placeholder": "Blunt"},
+      {"key": "name", "label": "Название (ключ локализации)", "type": "string", "placeholder": "damage-type-blunt"},
+      {"key": "armorCoefficientPrice", "label": "Цена брони: за коэффициент", "type": "float"},
+      {"key": "armorFlatPrice", "label": "Цена брони: за плоскую защиту", "type": "float"}
+    ]
+  },
+  {
+    "type": "damageGroup",
+    "label": "DamageGroup — группа урона",
+    "fields": [
+      {"key": "id", "label": "ID", "type": "string", "required": true, "placeholder": "Brute"},
+      {"key": "name", "label": "Название (ключ локализации)", "type": "string", "placeholder": "damage-group-brute"},
+      {"key": "damageTypes", "label": "Типы урона", "type": "list", "item_type": "string",
+       "help": "ID типов урона, входящих в группу."}
+    ]
+  },
+  {
+    "type": "stack",
+    "label": "Stack — стак (пачка)",
+    "fields": [
+      {"key": "id", "label": "ID", "type": "string", "required": true, "placeholder": "Steel"},
+      {"key": "name", "label": "Название", "type": "string"},
+      {"key": "icon", "label": "Иконка", "type": "group", "fields": [
+        {"key": "sprite", "label": "sprite (путь к .rsi)", "type": "string"},
+        {"key": "state", "label": "state", "type": "string"}
+      ]},
+      {"key": "spawn", "label": "Что спавнится (ID entity)", "type": "string"},
+      {"key": "maxCount", "label": "Максимум в стаке", "type": "int"}
+    ]
+  },
+  {
+    "type": "soundCollection",
+    "label": "SoundCollection — набор звуков",
+    "fields": [
+      {"key": "id", "label": "ID", "type": "string", "required": true},
+      {"key": "files", "label": "Файлы", "type": "list", "item_type": "string",
+       "help": "Пути вида /Audio/Items/wrench.ogg"}
+    ]
+  },
+  {
+    "type": "latheRecipe",
+    "label": "LatheRecipe — рецепт станка",
+    "fields": [
+      {"key": "id", "label": "ID", "type": "string", "required": true},
+      {"key": "result", "label": "Результат (ID entity)", "type": "string"},
+      {"key": "completetime", "label": "Время изготовления, сек", "type": "float"},
+      {"key": "materials", "label": "Материалы", "type": "map", "value_type": "int",
+       "help": "Например: Steel — 100, Glass — 50."}
+    ]
+  }
+]

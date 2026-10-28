@@ -1,0 +1,16 @@
+{
+  "_comment": "Пример своего файла компонентов. Переименуйте в my_components.json (уберите .off), и компоненты появятся в списке после перезапуска или пункта меню «Перезагрузить списки». Положите файл в папку custom/components/.",
+  "category": "Мои компоненты",
+  "components": [
+    {
+      "name": "MyCustomComponent",
+      "description": "Что делает компонент (видно в списке).",
+      "fields": [
+        {"key": "someText", "label": "Текст", "type": "string", "required": true},
+        {"key": "someNumber", "label": "Число", "type": "float"},
+        {"key": "enabled", "label": "Включён", "type": "bool"},
+        {"key": "mode", "label": "Режим", "type": "enum", "options": ["A", "B"]}
+      ]
+    }
+  ]
+}

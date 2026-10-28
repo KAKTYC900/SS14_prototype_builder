@@ -1,0 +1,58 @@
+{
+  "category": "Визуальные эффекты",
+  "components": [
+    {
+      "name": "Sprite",
+      "description": "Внешний вид объекта: RSI-файл, состояние, слои, цвет, масштаб.",
+      "fields": [
+        {"key": "sprite", "label": "RSI (путь)", "type": "string", "placeholder": "Objects/Tools/wrench.rsi",
+         "help": "Путь к .rsi относительно Resources/Textures."},
+        {"key": "state", "label": "Состояние (state)", "type": "string", "placeholder": "icon",
+         "help": "Имя состояния из meta.json. Не нужно, если заданы layers."},
+        {"key": "color", "label": "Цвет", "type": "color"},
+        {"key": "scale", "label": "Масштаб", "type": "vector2", "help": "Например 1.5 и 1.5."},
+        {"key": "offset", "label": "Смещение", "type": "vector2"},
+        {"key": "rotation", "label": "Поворот (градусы)", "type": "float"},
+        {"key": "drawdepth", "label": "Глубина отрисовки", "type": "enum", "editable": true,
+         "options": ["BelowFloor", "FloorTiles", "FloorObjects", "Walls", "Objects", "SmallObjects",
+                     "Items", "Mobs", "Effects", "Overlays", "HighestDraw"]},
+        {"key": "visible", "label": "Виден", "type": "bool"},
+        {"key": "noRot", "label": "Не вращать (noRot)", "type": "bool"},
+        {"key": "snapCardinals", "label": "Привязка к 4 сторонам", "type": "bool"},
+        {"key": "layers", "label": "Слои (layers)", "type": "objlist", "item_label_key": "state",
+         "help": "Несколько спрайтов поверх друг друга. Если слои заданы, sprite/state выше обычно не нужны.",
+         "item_fields": [
+           {"key": "sprite", "label": "RSI (путь)", "type": "string"},
+           {"key": "state", "label": "Состояние", "type": "string"},
+           {"key": "texture", "label": "Texture (png вместо rsi)", "type": "string"},
+           {"key": "map", "label": "Ключи слоя (map)", "type": "list", "item_type": "string",
+            "help": "Например enum.PowerDeviceVisualLayers.Powered — по ним слой находят визуализаторы."},
+           {"key": "color", "label": "Цвет", "type": "color"},
+           {"key": "scale", "label": "Масштаб", "type": "vector2"},
+           {"key": "offset", "label": "Смещение", "type": "vector2"},
+           {"key": "rotation", "label": "Поворот (градусы)", "type": "float"},
+           {"key": "shader", "label": "Шейдер", "type": "string", "placeholder": "unshaded"},
+           {"key": "visible", "label": "Виден", "type": "bool"}
+         ]}
+      ]
+    },
+    {
+      "name": "PointLight",
+      "description": "Источник света.",
+      "fields": [
+        {"key": "radius", "label": "Радиус", "type": "float", "placeholder": "3"},
+        {"key": "energy", "label": "Яркость", "type": "float", "placeholder": "1"},
+        {"key": "color", "label": "Цвет", "type": "color"},
+        {"key": "softness", "label": "Мягкость", "type": "float"},
+        {"key": "offset", "label": "Смещение", "type": "vector2"},
+        {"key": "enabled", "label": "Включён", "type": "bool"},
+        {"key": "castShadows", "label": "Отбрасывает тени", "type": "bool"}
+      ]
+    },
+    {
+      "name": "Appearance",
+      "description": "Позволяет визуализаторам менять внешний вид по данным (open/closed, powered и т.п.). Параметров нет.",
+      "fields": []
+    }
+  ]
+}

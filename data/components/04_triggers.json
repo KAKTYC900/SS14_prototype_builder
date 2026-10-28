@@ -1,0 +1,37 @@
+{
+  "category": "Триггеры и взрывы",
+  "components": [
+    {
+      "name": "OnUseTimerTrigger",
+      "description": "Срабатывает через заданное время после активации предмета в руке.",
+      "fields": [
+        {"key": "delay", "label": "Задержка, сек", "type": "float", "required": true},
+        {"key": "initialBeepDelay", "label": "Задержка до первого писка, сек", "type": "float"},
+        {"key": "beepInterval", "label": "Интервал писков, сек", "type": "float"}
+      ]
+    },
+    {
+      "name": "ExplodeOnTrigger",
+      "description": "Взрывает объект, когда срабатывает триггер. Параметры взрыва задаются компонентом Explosive.",
+      "fields": []
+    },
+    {
+      "name": "Explosive",
+      "description": "Параметры взрыва.",
+      "fields": [
+        {"key": "explosionType", "label": "Тип взрыва", "type": "string", "placeholder": "Default"},
+        {"key": "maxIntensity", "label": "Макс. интенсивность", "type": "float"},
+        {"key": "intensitySlope", "label": "Спад интенсивности", "type": "float"},
+        {"key": "totalIntensity", "label": "Суммарная интенсивность", "type": "float"}
+      ]
+    },
+    {
+      "name": "ExplosionResistance",
+      "description": "Устойчивость к взрывам.",
+      "fields": [
+        {"key": "damageCoefficient", "label": "Коэффициент урона", "type": "float",
+         "help": "0.5 — получает вдвое меньше урона от взрыва."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "category": "Физика и позиция",
+  "components": [
+    {
+      "name": "Physics",
+      "description": "Физическое тело объекта.",
+      "fields": [
+        {"key": "bodyType", "label": "Тип тела", "type": "enum",
+         "options": ["Static", "Dynamic", "Kinematic", "KinematicController"]},
+        {"key": "canCollide", "label": "Сталкивается", "type": "bool"},
+        {"key": "fixedRotation", "label": "Фиксированный поворот", "type": "bool"},
+        {"key": "sleepingAllowed", "label": "Может «засыпать»", "type": "bool"},
+        {"key": "linearDamping", "label": "Линейное затухание", "type": "float"},
+        {"key": "angularDamping", "label": "Угловое затухание", "type": "float"}
+      ]
+    },
+    {
+      "name": "Transform",
+      "description": "Положение объекта в мире.",
+      "fields": [
+        {"key": "anchored", "label": "Прикреплён к полу", "type": "bool"},
+        {"key": "noRot", "label": "Не вращается", "type": "bool"}
+      ]
+    },
+    {
+      "name": "Anchorable",
+      "description": "Объект можно прикрутить к полу и открутить. Параметров нет.",
+      "fields": []
+    },
+    {
+      "name": "Pullable",
+      "description": "Объект можно тащить. Параметров нет.",
+      "fields": []
+    }
+  ]
+}

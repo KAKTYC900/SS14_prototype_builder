@@ -1,0 +1,51 @@
+{
+  "category": "Урон и броня",
+  "components": [
+    {
+      "name": "Damageable",
+      "description": "Объект может получать урон.",
+      "fields": [
+        {"key": "damageContainer", "label": "Контейнер урона", "type": "enum", "editable": true,
+         "options": ["Biological", "Inorganic", "Silicon", "StructuralInorganic", "StructuralMetallic"]},
+        {"key": "damageModifierSet", "label": "Набор модификаторов", "type": "enum", "editable": true,
+         "options": ["Metallic", "Glass", "Wood", "Flesh", "Inflexible", "Wall", "Stone"]}
+      ]
+    },
+    {
+      "name": "MeleeWeapon",
+      "description": "Оружие ближнего боя.",
+      "fields": [
+        {"key": "attackRate", "label": "Скорость атаки (ударов/сек)", "type": "float"},
+        {"key": "range", "label": "Дальность", "type": "float"},
+        {"key": "angle", "label": "Угол размаха", "type": "float"},
+        {"key": "animation", "label": "Анимация", "type": "string", "placeholder": "WeaponArcThrust"},
+        {"key": "damage", "label": "Урон", "type": "group", "fields": [
+          {"key": "types", "label": "Типы урона", "type": "map", "value_type": "float",
+           "help": "Например: Blunt — 10, Slash — 5."}
+        ]}
+      ]
+    },
+    {
+      "name": "Projectile",
+      "description": "Снаряд, наносящий урон при столкновении.",
+      "fields": [
+        {"key": "damage", "label": "Урон", "type": "group", "fields": [
+          {"key": "types", "label": "Типы урона", "type": "map", "value_type": "float"}
+        ]},
+        {"key": "deleteOnCollide", "label": "Исчезает при столкновении", "type": "bool"},
+        {"key": "ignoreResistances", "label": "Игнорирует защиту", "type": "bool"}
+      ]
+    },
+    {
+      "name": "Armor",
+      "description": "Броня: уменьшает входящий урон.",
+      "fields": [
+        {"key": "modifiers", "label": "Модификаторы", "type": "group", "fields": [
+          {"key": "coefficients", "label": "Коэффициенты", "type": "map", "value_type": "float",
+           "help": "Множитель урона: 0.7 — получаем 70% урона."},
+          {"key": "flatReduction", "label": "Плоское снижение", "type": "map", "value_type": "float"}
+        ]}
+      ]
+    }
+  ]
+}
